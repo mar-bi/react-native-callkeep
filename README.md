@@ -169,10 +169,15 @@ RNCallKeep.setMutedCall(uuid, true);
 ### checkIfBusy
 
 Checks if there are any active calls on the device and returns a promise with a boolean value (`true` if there're active calls, `false` otherwise).
-_This feature is available only on iOs._
+_This feature is available on iOs and Android._
 
 ```js
+// call on ios
 RNCallKeep.checkIfBusy();
+
+
+// call on Android
+await RNCallKeep.checkIfBusy();
 ```
 
 ### checkSpeaker
