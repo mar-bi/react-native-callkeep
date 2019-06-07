@@ -89,10 +89,11 @@ class RNCallKeep {
     RNCallKeepModule.setMutedCall(uuid, muted);
   };
 
-  checkIfBusy = () =>
+  checkIfBusy = async () =>
     Platform.OS === 'ios'
       ? RNCallKeepModule.checkIfBusy()
-      : Promise.reject('RNCallKeep.checkIfBusy was called from unsupported OS');
+      : await RNCallKeepModule.checkIfBusy();
+      // : Promise.reject('RNCallKeep.checkIfBusy was called from unsupported OS');
 
   checkSpeaker = () =>
     Platform.OS === 'ios'

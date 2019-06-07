@@ -378,4 +378,13 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule {
             }
         }
     }
+
+    @ReactMethod
+    public void checkIfBusy(Promise promise) {
+        promise.resolve(checkIfBusy());
+    }
+
+    public static Boolean checkIfBusy() {
+        return telecomManager.isInCall();
+    }
 }
